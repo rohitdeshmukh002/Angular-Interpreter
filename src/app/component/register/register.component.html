@@ -1,0 +1,113 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white">
+        <h2 class="text-center">Registration Form</h2>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="userId" class="form-label">User ID</label>
+            <input
+              type="text"
+              id="userId"
+              class="form-control"
+              formControlName="userId"
+              placeholder="Enter User ID"
+            />
+            <div *ngIf="registrationForm.get('userId')?.touched && registrationForm.get('userId')?.invalid" class="text-danger">
+              User ID is required.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              formControlName="firstName"
+              placeholder="Enter First Name"
+            />
+            <div *ngIf="registrationForm.get('firstName')?.touched && registrationForm.get('firstName')?.invalid" class="text-danger">
+              First Name is required.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="middleName" class="form-label">Middle Name</label>
+            <input
+              type="text"
+              id="middleName"
+              class="form-control"
+              formControlName="middleName"
+              placeholder="Enter Middle Name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              class="form-control"
+              formControlName="lastName"
+              placeholder="Enter Last Name"
+            />
+            <div *ngIf="registrationForm.get('lastName')?.touched && registrationForm.get('lastName')?.invalid" class="text-danger">
+              Last Name is required.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="mobileNo" class="form-label">Mobile No</label>
+            <input
+              type="text"
+              id="mobileNo"
+              class="form-control"
+              formControlName="mobileNo"
+              placeholder="Enter Mobile No"
+            />
+            <div *ngIf="registrationForm.get('mobileNo')?.touched && registrationForm.get('mobileNo')?.invalid" class="text-danger">
+              Enter a valid 10-digit Mobile No.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="emailId" class="form-label">Email ID</label>
+            <input
+              type="email"
+              id="emailId"
+              class="form-control"
+              formControlName="emailId"
+              placeholder="Enter Email ID"
+            />
+            <div *ngIf="registrationForm.get('emailId')?.touched && registrationForm.get('emailId')?.invalid" class="text-danger">
+              Enter a valid Email ID.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="altMobileNo" class="form-label">Alternate Mobile No</label>
+            <input
+              type="text"
+              id="altMobileNo"
+              class="form-control"
+              formControlName="altMobileNo"
+              placeholder="Enter Alternate Mobile No"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              formControlName="password"
+              placeholder="Enter Password"
+            />
+            <div *ngIf="registrationForm.get('password')?.touched && registrationForm.get('password')?.invalid" class="text-danger">
+              Password must be at least 6 characters.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100" [disabled]="registrationForm.invalid">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

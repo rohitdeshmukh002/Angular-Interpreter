@@ -1,0 +1,30 @@
+
+  <div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card p-4 shadow-sm" style="width: 25rem;">
+      <h3 class="text-center mb-4">Login</h3>
+      <form>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" name="EmailId" [(ngModel)]="apiloginobj.EmailId" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+        <!-- Password Field -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="Password" [(ngModel)]="apiloginobj.Password" class="form-control" id="password" placeholder="Enter your password" required>
+        </div>
+        <!-- Remember Me Checkbox -->
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="remember">
+          <label class="form-check-label" for="remember">Remember Me</label>
+        </div>
+        <!-- Login Button -->
+        <button type="submit" class="btn btn-primary w-100" (click)="login()">Login</button>
+        <!-- Link to Register -->
+        <div class="text-center mt-3">
+          <a href="#">Don't have an account? Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
